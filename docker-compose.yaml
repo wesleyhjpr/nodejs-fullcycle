@@ -17,8 +17,10 @@ services:
       - node-network
 
   nodejs:
-    build: .
+    build: 
+      context: node
     container_name: nodejs-container
+    entrypoint: dockerize -wait tcp://mysql-container:3306 -timeout 20s docker-entrypoint.sh
     ports:
       - "3000:3000"
     depends_on:
@@ -35,9 +37,8 @@ services:
       - node-network
 
   nginx:
-    build:
-      context: .
-      dockerfile: Dockerfile.nginx
+    build: 
+      context: nginx
     container_name: nginx-container
     ports:
       - "80:80"
