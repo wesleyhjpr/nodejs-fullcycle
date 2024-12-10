@@ -28,7 +28,7 @@ cd golang-fullcycle
 No diretório raiz do projeto, execute o comando abaixo para iniciar a aplicação:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 Isso irá construir as imagens e iniciar os contêineres do Node.js, MySQL e Nginx.
 
@@ -56,7 +56,7 @@ curl -X POST http://localhost:80/add -H "Content-Type: application/json" -d '{"n
 Quando terminar de testar, você pode parar os contêineres com o comando:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 
